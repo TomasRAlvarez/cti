@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: ease-in-out;
+}
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.headerNavbar {
+  height: 5rem;
+  width: 100%;
+}
+
+.principal {
+  height: 100vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+.principal .principalForm {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+.principal .principalForm .operacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.principal .principalForm .operacion div {
+  margin: 1rem;
+}
+.principal .principalForm .calculo {
+  margin: 1rem 0 1rem 0;
+}
+.principal .principalForm .btnPrincipal {
+  width: 15%;
+}

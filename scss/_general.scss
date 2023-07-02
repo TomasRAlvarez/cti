@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: ease-in-out;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}

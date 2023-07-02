@@ -1,0 +1,30 @@
+.principal {
+    height: 100vh;
+    width: 100%;
+    margin-top: 2rem;
+
+    .principalForm {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+
+        .operacion {
+            display: flex;
+            justify-content: center;
+
+            div {
+                margin: 1rem;
+            }
+        }
+
+        .calculo {
+            margin: 1rem 0 1rem 0;
+        }
+
+        .btnPrincipal {
+            width: 15%;
+        }
+    }
+}
