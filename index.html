@@ -26,9 +26,6 @@
                                 <a class="nav-link" href="#">Cotizacion</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">FAQ</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="#">Login</a>
                             </li>
                         </ul>
@@ -40,27 +37,122 @@
         <main class="principal">
             <fieldset>
                 <form class="principalForm">
-                    <legend><h1>Nueva cotizacion</h1></legend>
-                    <section class="operacion">
-                        <div>
-                            <label for="checkbox">Venta</label>
-                            <input type="checkbox" id="venta" />
+                    <section class="datosProp">
+                        <div class="mb-3">
+                            <label for="nombreProp" class="form-label">Nombre de la Propiedad</label>
+                            <input type="text" class="form-control" id="nombreProp" />
                         </div>
-                        <div>
-                            <label for="checkbox">Alquiler</label>
-                            <input type="checkbox" id="alquiler" />
+
+                        <div class="mb-3">
+                            <label for="direcProp" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" id="direcProp" />
                         </div>
+
+                        <article class="tipoProp">
+                            <div>
+                                <input type="radio" name="casa" id="tipoCasa" />
+                                <label for="tipoCasa">Casa</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="depto" id="tipoDepto" />
+                                <label for="tipoDepto">Departamento</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="ph" id="tipoPH" />
+                                <label for="tipoPH">PH</label>
+                            </div>
+                        </article>
+
+                        <article class="localidadProp">
+                            <div class="form-floating">
+                                <select class="form-select" id="barrioProp">
+                                    <option value="0">Cero</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <label for="barrioProp">Seleccione localidad</label>
+                            </div>
+                        </article>
+                        <button type="button" class="btn btn-primary" onclick="">Usar valor de M² recomendado</button>
                     </section>
 
                     <section class="calculo">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">M2</span>
-                            <input type="number" class="form-control" id="cantidadM2"">
-                        </div>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Valor del M2</span>
-                            <input type="number" class="form-control" id="valorM2"">
-                        </div>
+                        <article class="operacion">
+                            <div>
+                                <label for="checkbox">Venta</label>
+                                <input type="checkbox" id="venta" />
+                            </div>
+                            <div>
+                                <label for="checkbox">Alquiler</label>
+                                <input type="checkbox" id="alquiler" />
+                            </div>
+                        </article>
+
+                        <article class="dimensiones">
+                            <div class="dimensionesTotales">
+                                <div class="input-group mb-3 dimensionesTotalesInputs">
+                                    <span class="input-group-text">Valor del M²</span>
+                                    <input type="number" class="form-control" id="valorM2" />
+                                </div>
+                                <div class="input-group mb-3 dimensionesTotalesInputs">
+                                    <span class="input-group-text">M²</span>
+                                    <input type="number" class="form-control" id="cantidadM2" />
+                                </div>
+                            </div>
+
+                            <div class="dimensionesTipos">
+                                <div class="input-group mb-3 dimensionesTiposInputs">
+                                    <span class="input-group-text">M² Cubiertos</span>
+                                    <input type="number" class="form-control" id="cantidadM2Cubiertos" />
+                                </div>
+                                <div class="input-group mb-3 dimensionesTiposInputs">
+                                    <span class="input-group-text">M² Descubiertos</span>
+                                    <input type="number" class="form-control" id="cantidadM2Descubiertos" />
+                                </div>
+                                <div class="input-group mb-3 dimensionesTiposInputs">
+                                    <span class="input-group-text">M² Semicubiertos</span>
+                                    <input type="number" class="form-control" id="cantidadM2Semicubiertos" />
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="extras">
+                            <div class="estado">
+                                <label for="estadoProp" class="form-label">Estado de la Propiedad</label>
+                                <div>
+                                    <h6>A Reciclar</h6>
+                                    <input type="range" class="form-range" id="estadoProp" />
+                                    <h6>A Estrenar</h6>
+                                </div>
+                            </div>
+
+                            <div class="amenities">
+                                <h5>Amenities</h5>
+                                <div class="amenitiesTipos">
+                                    <div>
+                                        <input type="checkbox" id="pileta" />
+                                        <label for="pileta">Pileta</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="parrilla" />
+                                        <label for="parrilla">Parrilla</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="jardin" />
+                                        <label for="jardin">Jardin</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="sum" />
+                                        <label for="sum">SUM</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="gimnasio" />
+                                        <label for="gimnasio">Gimnasio</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                         <button type="button" class="btn btn-primary btnPrincipal" onclick="validar()">Cotizar</button>
                     </section>
 
