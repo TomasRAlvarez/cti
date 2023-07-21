@@ -50,15 +50,15 @@
 
                         <article class="tipoProp">
                             <div>
-                                <input type="radio" name="casa" id="tipoCasa" />
+                                <input type="radio" name="tipoProp" id="tipoCasa" checked />
                                 <label for="tipoCasa">Casa</label>
                             </div>
                             <div>
-                                <input type="radio" name="depto" id="tipoDepto" />
+                                <input type="radio" name="tipoProp" id="tipoDepto" />
                                 <label for="tipoDepto">Departamento</label>
                             </div>
                             <div>
-                                <input type="radio" name="ph" id="tipoPH" />
+                                <input type="radio" name="tipoProp" id="tipoPH" />
                                 <label for="tipoPH">PH</label>
                             </div>
                         </article>
@@ -66,26 +66,70 @@
                         <article class="localidadProp">
                             <div class="form-floating">
                                 <select class="form-select" id="barrioProp">
-                                    <option value="0">Cero</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="Agronomía">Agronomía</option>
+                                    <option value="Almagro">Almagro</option>
+                                    <option value="Balvanera">Balvanera</option>
+                                    <option value="Barracas">Barracas</option>
+                                    <option value="Belgrano">Belgrano</option>
+                                    <option value="Boedo">Boedo</option>
+                                    <option value="Caballito">Caballito</option>
+                                    <option value="Chacarita">Chacarita</option>
+                                    <option value="Coghlan">Coghlan</option>
+                                    <option value="Colegiales">Colegiales</option>
+                                    <option value="Constitución">Constitución</option>
+                                    <option value="Flores">Flores</option>
+                                    <option value="Floresta">Floresta</option>
+                                    <option value="La Boca">La Boca</option>
+                                    <option value="La Paternal">La Paternal</option>
+                                    <option value="Liniers">Liniers</option>
+                                    <option value="Mataderos">Mataderos</option>
+                                    <option value="Monserrat">Monserrat</option>
+                                    <option value="Monte Castro">Monte Castro</option>
+                                    <option value="Nueva Pompeya">Nueva Pompeya</option>
+                                    <option value="Núñez">Núñez</option>
+                                    <option value="Palermo">Palermo</option>
+                                    <option value="Parque Avellaneda">Parque Avellaneda</option>
+                                    <option value="Parque Chacabuco">Parque Chacabuco</option>
+                                    <option value="Parque Chas">Parque Chas</option>
+                                    <option value="Parque Patricios">Parque Patricios</option>
+                                    <option value="Puerto Madero">Puerto Madero</option>
+                                    <option value="Recoleta">Recoleta</option>
+                                    <option value="Retiro">Retiro</option>
+                                    <option value="Saavedra">Saavedra</option>
+                                    <option value="San Cristóbal">San Cristóbal</option>
+                                    <option value="San Nicolás">San Nicolás</option>
+                                    <option value="San Telmo">San Telmo</option>
+                                    <option value="Vélez Sársfield">Vélez Sársfield</option>
+                                    <option value="Versalles">Versalles</option>
+                                    <option value="Villa Crespo">Villa Crespo</option>
+                                    <option value="Villa del Parque">Villa del Parque</option>
+                                    <option value="Villa Devoto">Villa Devoto</option>
+                                    <option value="Villa General Mitre">Villa General Mitre</option>
+                                    <option value="Villa Lugano">Villa Lugano</option>
+                                    <option value="Villa Luro">Villa Luro</option>
+                                    <option value="Villa Ortúzar">Villa Ortúzar</option>
+                                    <option value="Villa Pueyrredón">Villa Pueyrredón</option>
+                                    <option value="Villa Real">Villa Real</option>
+                                    <option value="Villa Riachuelo">Villa Riachuelo</option>
+                                    <option value="Villa Santa Rita">Villa Santa Rita</option>
+                                    <option value="Villa Soldati">Villa Soldati</option>
+                                    <option value="Villa Urquiza">Villa Urquiza</option>
                                 </select>
-                                <label for="barrioProp">Seleccione localidad</label>
+                                <label for="barrioProp">Seleccione un barrio</label>
                             </div>
                         </article>
-                        <button type="button" class="btn btn-primary" onclick="">Usar valor de M² recomendado</button>
+                        <button type="button" class="btn btn-primary" id="btnValorBarrio">Usar valor de M² recomendado</button>
                     </section>
 
                     <section class="calculo">
                         <article class="operacion">
                             <div>
-                                <label for="checkbox">Venta</label>
-                                <input type="checkbox" id="venta" />
+                                <input type="radio" name="tipoOperacion" id="venta" checked />
+                                <label for="venta">Venta</label>
                             </div>
                             <div>
-                                <label for="checkbox">Alquiler</label>
-                                <input type="checkbox" id="alquiler" />
+                                <input type="radio" name="tipoOperacion" id="alquiler" />
+                                <label for="alquiler">Alquiler</label>
                             </div>
                         </article>
 
@@ -97,22 +141,22 @@
                                 </div>
                                 <div class="input-group mb-3 dimensionesTotalesInputs">
                                     <span class="input-group-text">M²</span>
-                                    <input type="number" class="form-control" id="cantidadM2" />
+                                    <input type="number" class="form-control" id="m2Totales" />
                                 </div>
                             </div>
 
                             <div class="dimensionesTipos">
                                 <div class="input-group mb-3 dimensionesTiposInputs">
                                     <span class="input-group-text">M² Cubiertos</span>
-                                    <input type="number" class="form-control" id="cantidadM2Cubiertos" />
+                                    <input type="number" class="form-control" id="m2Cubiertos" />
                                 </div>
                                 <div class="input-group mb-3 dimensionesTiposInputs">
                                     <span class="input-group-text">M² Descubiertos</span>
-                                    <input type="number" class="form-control" id="cantidadM2Descubiertos" />
+                                    <input type="number" class="form-control" id="m2Descubiertos" />
                                 </div>
                                 <div class="input-group mb-3 dimensionesTiposInputs">
                                     <span class="input-group-text">M² Semicubiertos</span>
-                                    <input type="number" class="form-control" id="cantidadM2Semicubiertos" />
+                                    <input type="number" class="form-control" id="m2Semicubiertos" />
                                 </div>
                             </div>
                         </article>
@@ -153,16 +197,22 @@
                                 </div>
                             </div>
                         </article>
-                        <button type="button" class="btn btn-primary btnPrincipal" onclick="validar()">Cotizar</button>
-                    </section>
-
-                    <section class="resultados">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Cotizacion</span>
-                            <input type="number" class="form-control" id="valorFinal" disabled />
-                        </div>
-                        <button type="button" class="btn btn-success btnPrincipal" onclick="guardar()">Guardar Cotizacion</button>
-                        <button type="button" class="btn btn-danger btnPrincipal" onclick="eliminar()">Borrar Datos</button>
+                        <article class="resultados">
+                            .
+                            <div>
+                                <button type="button" class="btn btn-primary btnPrincipal" id="btnCotizar">Cotizar</button>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Cotizacion</span>
+                                <input type="number" class="form-control" id="valorFinal" disabled />
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-success btnPrincipal" id="btnGuardar" disabled>Guardar Cotizacion</button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-danger btnPrincipal" id="btnEliminar">Borrar Datos</button>
+                            </div>
+                        </article>
                     </section>
                 </form>
             </fieldset>

@@ -142,3 +142,15 @@ body::-webkit-scrollbar {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
+.principal .principalForm .calculo .resultados {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.principal .principalForm .calculo .resultados div {
+  margin: 1rem;
+}
+.principal .principalForm .calculo .resultados div .btnPrincipal {
+  width: 10rem;
+  height: 5rem;
+}

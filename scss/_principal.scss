@@ -78,6 +78,19 @@
                     }
                 }
             }
+
+            .resultados {
+                display: flex;
+
+                div {
+                    margin: 1rem;
+
+                    .btnPrincipal {
+                        width: 10rem;
+                        height: 5rem;
+                    }
+                }
+            }
         }
     }
 }
