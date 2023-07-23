@@ -1,4 +1,22 @@
 .headerNavbar {
     height: 5rem;
     width: 100%;
+    div {
+        a {
+            color: white;
+        }
+        .logo {
+            font-size: 2rem;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            .navbarBtns {
+                width: 80%;
+                display: flex;
+                justify-content: space-evenly;
+                font-size: 1.3rem;
+            }
+        }
+    }
 }

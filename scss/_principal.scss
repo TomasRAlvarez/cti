@@ -5,7 +5,6 @@
     .principalForm {
         display: flex;
         flex-wrap: wrap;
-        height: 90vh;
         justify-content: space-evenly;
 
         .datosProp {
@@ -92,5 +91,14 @@
                 }
             }
         }
+    }
+
+    .misProps {
+        display: flex;
+        flex-direction: column;
+        margin: 1.5rem;
+        padding: 2rem;
+        border: solid #4c76ff;
+        border-radius: 1rem;
     }
 }

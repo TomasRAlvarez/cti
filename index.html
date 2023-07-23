@@ -12,18 +12,18 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg bg-primary headerNavbar" id="headerNavbar">
-                <div class="container-fluid">
+                <div class="container-fluid bg-primary">
                     <a class="navbar-brand logo" href="#">C.T.I.</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav navbarBtns">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                                <a class="nav-link" aria-current="page" href="#nombreProp">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cotizacion</a>
+                                <a class="nav-link" href="#misPropiedades">Mis Propiedades</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Login</a>
@@ -216,6 +216,26 @@
                     </section>
                 </form>
             </fieldset>
+
+            <section class="misProps">
+                <article class="misPropsTitle">
+                    <h1>Mis Propiedades</h1>
+                </article>
+
+                <article class="misPropsTable">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">M²</th>
+                                <th scope="col">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="misPropiedades"></tbody>
+                    </table>
+                </article>
+            </section>
         </main>
 
         <footer></footer>

@@ -118,6 +118,7 @@ function crearProp() {
         sum: sum,
         gimnasio: gimnasio,
     };
+    //agrego la propiedad al array con todas las propiedades
     propsGuardadas.push(propiedad);
     alert("Su propiedad se guardo correctamente");
     alert(`Usted guardo ${propsGuardadas.length} propiedades`);
@@ -125,4 +126,19 @@ function crearProp() {
     for (let i = 0; i < propsGuardadas.length; i++) {
         console.log(propsGuardadas[i]);
     }
+    //agregar la propiedad a la tabla "mis propiedades"
+    let section = document.getElementById("misPropiedades");
+    //resetea la tabla antes de agregar una nueva propiedad
+    section.innerHTML = "";
+    //ciclo que agrega todas las propiedades del array a la tabla
+    for (let i = 0; i < propsGuardadas.length; i++) {
+        section.innerHTML += `<tr>
+            <td>${propsGuardadas[i].nombre}</td>
+            <td>${propsGuardadas[i].direccion}</td>
+            <td>${propsGuardadas[i].metrosTotales}</td>
+            <td>${propsGuardadas[i].valor}</td>
+        </tr>`;
+    }
+    //resetea los campos para crear cotizaciones
+    eliminar();
 }
