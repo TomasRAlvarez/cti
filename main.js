@@ -3,12 +3,14 @@ const btnValorBarrio = document.getElementById("btnValorBarrio");
 const btnCotizar = document.getElementById("btnCotizar");
 const btnGuardar = document.getElementById("btnGuardar");
 const btnEliminar = document.getElementById("btnEliminar");
+const btnMayorValor = document.getElementById("btnMayorValor");
 
 //Funciones q ejecuta cada boton cuando se clickea
 btnValorBarrio.onclick = valorBarrio;
 btnCotizar.onclick = validar;
 btnGuardar.onclick = crearProp;
 btnEliminar.onclick = eliminar;
+btnMayorValor.onclick = mayorValor;
 
 //esta funcion es de ejemplo por ahora. Despues cada barrio va a tener un valor asignado y ese se le asignara "valorm2"
 function valorBarrio() {
@@ -141,4 +143,19 @@ function crearProp() {
     }
     //resetea los campos para crear cotizaciones
     eliminar();
+    //habilito el boton de propiedad de mayor valor
+    btnMayorValor.disabled = false;
+}
+
+//devuelve la propiedad de mayor valor
+function mayorValor() {
+    let mayor = propsGuardadas[0].valor;
+    let nombre = propsGuardadas[0].nombre;
+    for (let i = 0; i < propsGuardadas.length; i++) {
+        if (propsGuardadas[i].valor > mayor) {
+            mayor = propsGuardadas[i].valor;
+            nombre = propsGuardadas[i].nombre;
+        }
+    }
+    alert(`La propiedad de mayor valor cotizada es: ${nombre} con un valor de $${mayor}`);
 }
