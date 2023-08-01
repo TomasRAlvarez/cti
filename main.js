@@ -6,16 +6,11 @@ const btnEliminar = document.getElementById("btnEliminar");
 const btnMayorValor = document.getElementById("btnMayorValor");
 
 //Funciones q ejecuta cada boton cuando se clickea
-btnValorBarrio.onclick = valorBarrio;
-btnCotizar.onclick = validar;
-btnGuardar.onclick = crearProp;
-btnEliminar.onclick = eliminar;
-btnMayorValor.onclick = mayorValor;
-
-//esta funcion es de ejemplo por ahora. Despues cada barrio va a tener un valor asignado y ese se le asignara "valorm2"
-function valorBarrio() {
-    document.getElementById("valorM2").value = 1000;
-}
+btnValorBarrio.addEventListener("click", () => (document.getElementById("valorM2").value = 1000)); //esta funcion es de ejemplo por ahora. Despues cada barrio va a tener un valor asignado y ese se le asignara "valorm2"
+btnCotizar.addEventListener("click", validar);
+btnGuardar.addEventListener("click", crearProp);
+btnEliminar.addEventListener("click", eliminar);
+btnMayorValor.addEventListener("click", mayorValor);
 
 function validar() {
     let nombreProp = document.getElementById("nombreProp").value;
@@ -122,6 +117,7 @@ function crearProp() {
     };
     //agrego la propiedad al array con todas las propiedades
     propsGuardadas.push(propiedad);
+    localStorage.setItem("Propiedades", JSON.stringify(propsGuardadas)); //guarda las propiedades en el localstorage
     alert("Su propiedad se guardo correctamente");
     alert(`Usted guardo ${propsGuardadas.length} propiedades`);
     //ciclo para ver en la consola las propiedades guardadas
