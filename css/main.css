@@ -190,3 +190,50 @@ body::-webkit-scrollbar {
   border: solid #4c76ff;
   border-radius: 1rem;
 }
+
+.misPropsTitle {
+  border-bottom: solid #4e4e4e;
+}
+.misPropsTitle h1 {
+  margin: 1rem;
+}
+
+.propsView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.propsView .noProps-text {
+  font-size: larger;
+  color: #808080;
+  margin: auto;
+}
+.propsView .datosPropiedad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: solid #4c76ff;
+  border-radius: 1rem;
+}
+.propsView .datosPropiedad .datosPropiedadTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.propsView .datosPropiedad .datosPropiedadTitle img {
+  border-radius: 1rem;
+}

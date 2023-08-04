@@ -3,14 +3,12 @@ const btnValorBarrio = document.getElementById("btnValorBarrio");
 const btnCotizar = document.getElementById("btnCotizar");
 const btnGuardar = document.getElementById("btnGuardar");
 const btnEliminar = document.getElementById("btnEliminar");
-const btnMayorValor = document.getElementById("btnMayorValor");
 
 //Funciones q ejecuta cada boton cuando se clickea
 btnValorBarrio.addEventListener("click", () => (document.getElementById("valorM2").value = 1000)); //esta funcion es de ejemplo por ahora. Despues cada barrio va a tener un valor asignado y ese se le asignara "valorm2"
 btnCotizar.addEventListener("click", validar);
 btnGuardar.addEventListener("click", crearProp);
 btnEliminar.addEventListener("click", eliminar);
-btnMayorValor.addEventListener("click", mayorValor);
 
 function validar() {
     let nombreProp = document.getElementById("nombreProp").value;
@@ -117,41 +115,13 @@ function crearProp() {
     };
     //agrego la propiedad al array con todas las propiedades
     propsGuardadas.push(propiedad);
-    localStorage.setItem("Propiedades", JSON.stringify(propsGuardadas)); //guarda las propiedades en el localstorage
+    localStorage.setItem(`${propiedad.nombre}`, JSON.stringify(propiedad)); //guarda las propiedades en el localstorage
     alert("Su propiedad se guardo correctamente");
     alert(`Usted guardo ${propsGuardadas.length} propiedades`);
     //ciclo para ver en la consola las propiedades guardadas
     for (let i = 0; i < propsGuardadas.length; i++) {
         console.log(propsGuardadas[i]);
     }
-    //agregar la propiedad a la tabla "mis propiedades"
-    let section = document.getElementById("misPropiedades");
-    //resetea la tabla antes de agregar una nueva propiedad
-    section.innerHTML = "";
-    //ciclo que agrega todas las propiedades del array a la tabla
-    for (let i = 0; i < propsGuardadas.length; i++) {
-        section.innerHTML += `<tr>
-            <td>${propsGuardadas[i].nombre}</td>
-            <td>${propsGuardadas[i].direccion}</td>
-            <td>${propsGuardadas[i].metrosTotales}</td>
-            <td>${propsGuardadas[i].valor}</td>
-        </tr>`;
-    }
     //resetea los campos para crear cotizaciones
     eliminar();
-    //habilito el boton de propiedad de mayor valor
-    btnMayorValor.disabled = false;
-}
-
-//devuelve la propiedad de mayor valor
-function mayorValor() {
-    let mayor = propsGuardadas[0].valor;
-    let nombre = propsGuardadas[0].nombre;
-    for (let i = 0; i < propsGuardadas.length; i++) {
-        if (propsGuardadas[i].valor > mayor) {
-            mayor = propsGuardadas[i].valor;
-            nombre = propsGuardadas[i].nombre;
-        }
-    }
-    alert(`La propiedad de mayor valor cotizada es: ${nombre} con un valor de $${mayor}`);
 }
