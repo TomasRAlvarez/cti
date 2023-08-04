@@ -1,8 +1,14 @@
 .misPropsTitle {
-    & h1 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #4e4e4e;
+    & h1,
+    div {
         margin: 1rem;
     }
-    border-bottom: solid #4e4e4e;
+    & div {
+        width: 25%;
+    }
 }
 
 .propsView {

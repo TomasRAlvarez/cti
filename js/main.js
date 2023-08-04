@@ -117,7 +117,6 @@ function crearProp() {
     propsGuardadas.push(propiedad);
     localStorage.setItem(`${propiedad.nombre}`, JSON.stringify(propiedad)); //guarda las propiedades en el localstorage
     alert("Su propiedad se guardo correctamente");
-    alert(`Usted guardo ${propsGuardadas.length} propiedades`);
     //ciclo para ver en la consola las propiedades guardadas
     for (let i = 0; i < propsGuardadas.length; i++) {
         console.log(propsGuardadas[i]);

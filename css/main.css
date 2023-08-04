@@ -192,10 +192,20 @@ body::-webkit-scrollbar {
 }
 
 .misPropsTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-bottom: solid #4e4e4e;
 }
-.misPropsTitle h1 {
+.misPropsTitle h1,
+.misPropsTitle div {
   margin: 1rem;
+}
+.misPropsTitle div {
+  width: 25%;
 }
 
 .propsView {

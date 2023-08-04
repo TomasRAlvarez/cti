@@ -1,4 +1,5 @@
 const propsView = document.getElementById("propsView");
+const buscarProp = document.getElementById("buscarProp");
 //array para guardar las claves del localStorage
 let verProps = [];
 //cuando carga el documento
@@ -14,7 +15,8 @@ addEventListener("DOMContentLoaded", () => {
         //agrego al dom las propiedades guardadas
         for (let i = 0; i < verProps.length; i++) {
             let mostrarProp = JSON.parse(localStorage.getItem(`${verProps[i]}`));
-            propsView.innerHTML += `<article class="datosPropiedad">
+
+            propsView.innerHTML += `<article class="datosPropiedad" id=${verProps[i]}>
                 <div class="datosPropiedadTitle">
                     <img src="https://placeholder.com/100x100" alt="" />
                     <h4>${mostrarProp.nombre}</h4>
@@ -29,6 +31,17 @@ addEventListener("DOMContentLoaded", () => {
                     <h6>Amenietes: ${mostrarProp.pileta}</h6>
                 </div>
             </article>`;
+        }
+    }
+});
+
+//buscador de propiedades
+buscarProp.addEventListener("keyup", () => {
+    for (i = 0; i < verProps.length; i++) {
+        if (!verProps[i].includes(buscarProp.value)) {
+            document.getElementById(`${verProps[i]}`).style.display = "none";
+        } else {
+            document.getElementById(`${verProps[i]}`).style.display = "block";
         }
     }
 });
