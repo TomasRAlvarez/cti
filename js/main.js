@@ -20,9 +20,19 @@ function validar() {
     let m2Semicubiertos = parseFloat(document.getElementById("m2Semicubiertos").value);
     //reviso que todos los campos necesarios esten completos
     if (nombreProp === "" || direcProp === "" || valorXm2 === "" || m2Totales === "" || m2Cubiertos === "" || m2Semicubiertos === "" || m2Descubiertos === "") {
-        alert("Falta ingresar datos de la propiedad");
+        Swal.fire({
+            title: "Error!",
+            text: "Falta ingresar datos de la propiedad",
+            icon: "error",
+            confirmButtonText: "Ok",
+        });
     } else if (m2Totales != m2Cubiertos + m2Descubiertos + m2Semicubiertos) {
-        alert("Los metros cubiertos, descubiertos y semicubiertos no coinciden con los metros totales");
+        Swal.fire({
+            title: "Cuidado!",
+            text: "Los metros cubiertos, descubiertos y semicubiertos no coinciden con los metros totales",
+            icon: "warning",
+            confirmButtonText: "Ok",
+        });
     } else {
         cotizar(valorXm2, m2Totales, m2Cubiertos, m2Descubiertos, m2Semicubiertos);
     }
@@ -116,8 +126,19 @@ function crearProp() {
     //agrego la propiedad al array con todas las propiedades
     propsGuardadas.push(propiedad);
     localStorage.setItem(`${propiedad.nombre}`, JSON.stringify(propiedad)); //guarda las propiedades en el localstorage
-    alert("Su propiedad se guardo correctamente");
-    //ciclo para ver en la consola las propiedades guardadas
+    //toast de propiedad guardada correctamente
+    Toastify({
+        text: "La propiedad se guardo correctamente",
+        duration: 3000,
+        close: true,
+        stopOnFocus: false,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+    }).showToast();
+    //cicleo para ver en la consola las propiedades guardadas
     for (let i = 0; i < propsGuardadas.length; i++) {
         console.log(propsGuardadas[i]);
     }
