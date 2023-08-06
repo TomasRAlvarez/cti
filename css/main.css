@@ -212,6 +212,8 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 2rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -231,12 +233,8 @@ body::-webkit-scrollbar {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  margin-bottom: 1rem;
+  width: 30%;
   border: solid #4c76ff;
   border-radius: 1rem;
 }
@@ -245,5 +243,5 @@ body::-webkit-scrollbar {
   margin-bottom: 1rem;
 }
 .propsView .datosPropiedad .datosPropiedadTitle img {
-  border-radius: 1rem;
+  width: 20%;
 }

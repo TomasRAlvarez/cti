@@ -16,9 +16,50 @@ addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < verProps.length; i++) {
             let mostrarProp = JSON.parse(localStorage.getItem(`${verProps[i]}`));
 
+            //guardar imagen del tipo de propiedad
+            let tipoProp = "";
+            switch (mostrarProp.tipo) {
+                case "casa":
+                    tipoProp = "../assets/casa.svg";
+                    break;
+                case "departamento":
+                    tipoProp = "../assets/departamento.svg";
+                    break;
+                case "ph":
+                    tipoProp = "../assets/ph.svg";
+                    break;
+            }
+
+            //asignarle uina palabra al estado de la propiedad
+            let tipoEstado = parseInt(mostrarProp.estado);
+            switch (true) {
+                case tipoEstado >= 70:
+                    tipoEstado = "A estrenar";
+                    break;
+                case tipoEstado >= 50 && tipoEstado < 70:
+                    tipoEstado = "En condiciones";
+                    break;
+                case tipoEstado >= 20 && tipoEstado < 50:
+                    tipoEstado = "A mejorar";
+                    break;
+                case tipoEstado < 20:
+                    tipoEstado = "A reciclar";
+                    break;
+            }
+
+            //array para guardar los amenietes de la propiedad
+            let amenietes = [];
+            mostrarProp.pileta ? amenietes.push("Pileta") : null;
+            mostrarProp.parrilla ? amenietes.push(" Parrilla") : null;
+            mostrarProp.jardin ? amenietes.push(" Jardin") : null;
+            mostrarProp.sum ? amenietes.push(" SUM") : null;
+            mostrarProp.gimnasio ? amenietes.push(" Gimnasio") : null;
+            amenietes.length === 0 ? amenietes.push("No tiene") : null;
+
+            //creacion de la tarjeta de propiedad
             propsView.innerHTML += `<article class="datosPropiedad" id=${verProps[i]}>
                 <div class="datosPropiedadTitle">
-                    <img src="https://placeholder.com/100x100" alt="" />
+                    <img src="${tipoProp}" alt="" />
                     <h4>${mostrarProp.nombre}</h4>
                 </div>
 
@@ -27,8 +68,8 @@ addEventListener("DOMContentLoaded", () => {
                     <h6>Barrio: ${mostrarProp.barrio}</h6>
                     <h6>M²: ${mostrarProp.metrosTotales}</h6>
                     <h6>Valor de Cotizacion: $${mostrarProp.valor}</h6>
-                    <h6>Estado: ${mostrarProp.estado}</h6>
-                    <h6>Amenietes: ${mostrarProp.pileta}</h6>
+                    <h6>Estado: ${tipoEstado}</h6>
+                    <h6>Amenietes: ${amenietes}</h6>
                 </div>
             </article>`;
         }
