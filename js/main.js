@@ -5,10 +5,18 @@ const btnGuardar = document.getElementById("btnGuardar");
 const btnEliminar = document.getElementById("btnEliminar");
 
 //Funciones q ejecuta cada boton cuando se clickea
-btnValorBarrio.addEventListener("click", () => (document.getElementById("valorM2").value = 1000)); //esta funcion es de ejemplo por ahora. Despues cada barrio va a tener un valor asignado y ese se le asignara "valorm2"
+btnValorBarrio.addEventListener("click", valorBarrio);
 btnCotizar.addEventListener("click", validar);
 btnGuardar.addEventListener("click", crearProp);
 btnEliminar.addEventListener("click", eliminar);
+
+function valorBarrio() {
+    barrioSelect = document.getElementById("barrioProp").value; //barrio seleccionado
+    fetch("../json/valorBarrios.json") //pido los datos del json
+        .then((data) => data.json()) //parseo los datos recibidos
+        .then((parsedData) => (document.getElementById("valorM2").value = parsedData[barrioSelect])) //asigno el valor del input
+        .catch((e) => console.log("error", e));
+}
 
 function validar() {
     let nombreProp = document.getElementById("nombreProp").value;
