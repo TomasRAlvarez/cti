@@ -245,3 +245,12 @@ body::-webkit-scrollbar {
 .propsView .datosPropiedad .datosPropiedadTitle img {
   width: 20%;
 }
+
+main {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+main form {
+  margin: 2rem;
+}
