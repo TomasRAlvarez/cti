@@ -246,11 +246,11 @@ body::-webkit-scrollbar {
   width: 20%;
 }
 
-main {
+.mainLogin {
   width: 50%;
   text-align: center;
   margin: auto;
 }
-main form {
+.mainLogin form {
   margin: 2rem;
 }
