@@ -1,3 +1,9 @@
+//verifico que haya un usuario logueado, sino lo redirijo a login
+userId = sessionStorage.getItem("id");
+if (userId === null) {
+    window.location.href = "../pages/login.html";
+}
+
 //Asignacion de btns a variables
 const btnValorBarrio = document.getElementById("btnValorBarrio");
 const btnCotizar = document.getElementById("btnCotizar");
@@ -115,6 +121,7 @@ function crearProp() {
 
     //guardo la propiedad dentro del objeto
     let propiedad = {
+        id: userId,
         nombre: nombreProp,
         direccion: direcProp,
         barrio: barrioProp,

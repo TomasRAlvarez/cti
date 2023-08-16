@@ -1,5 +1,13 @@
 {
     "Tomas": {
         "password": "123"
+    },
+
+    "Prueba": {
+        "password": "000"
+    },
+
+    "Coderhouse": {
+        "password": "coderhouse"
     }
 }
