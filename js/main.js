@@ -1,7 +1,15 @@
 //verifico que haya un usuario logueado, sino lo redirijo a login
 userId = sessionStorage.getItem("id");
 if (userId === null) {
-    window.location.href = "./pages/login.html";
+    Swal.fire({
+        title: "No inicio sesion",
+        text: "Vaya a login para iniciar sesion",
+        icon: "warning",
+        confirmButtonText: "Ok",
+        confirmButtonColor: "green",
+    });
+    const main = document.getElementById("principal");
+    main.innerHTML = '<a href="./pages/login.html"><button class="btn btn-primary btnIniciarSesion">Iniciar Sesion</button></a>';
 }
 
 //Asignacion de btns a variables
