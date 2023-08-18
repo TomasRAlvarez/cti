@@ -53,19 +53,46 @@ if (userId !== null) {
 function loginOk(user) {
     //logeo exitoso
     document.getElementById("userName").innerText = `${user}`;
-    main.innerHTML = `<section class="userPage">
-        <div  class="userPageTitle">
-            <h1>Bienvenido ${user}</h1>
-        </div>
+    //contador de propiedades guardadas
+    let props = [];
+    let x = 0;
+    for (i = 0; i < localStorage.length; i++) {
+        //agrego a la variable todos los items del localstorage
+        props.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    }
+    for (i = 0; i < props.length; i++) {
+        if (props[i].id === user) {
+            x++;
+        }
+    }
 
-        <div  class="userPageStats">
-            <h2>Propiedades guardadas: </h2>
-        </div>
+    //modificacion de la pagina
+    main.innerHTML = `<section class="userPage">
+        <article class="userPagePrincipal"> 
+            <div  class="userPageTitle">
+                <h1>Bienvenido ${user}</h1>
+            </div>
+
+            <div  class="userPageStats">
+                <h2>Propiedades guardadas: ${x}</h2>
+            </div>
+        </article>
+
+        <article class="userPageLinks">         
+            <div>
+                <a href="../index.html"><button type="button" class="btn btn-primary">Cotizar una Propiedad</button></a>
+            </div>
+
+            <div>
+            <a href="./props.html"><button type="button" class="btn btn-success">Mis Propiedades</button></a>
+            </div>
+        </article>
 
         <div class="userPageLogout">
             <button type="button" class="btn btn-danger" id="btnLogout">Cerrar Sesion</button>
         </div>
     </section>`;
+
     const btnLogout = document.getElementById("btnLogout");
     btnLogout.addEventListener("click", () => {
         Swal.fire({

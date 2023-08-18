@@ -3,7 +3,6 @@ userId = sessionStorage.getItem("id");
 if (userId === null) {
     window.location.href = "../pages/login.html";
 }
-
 const propsView = document.getElementById("propsView");
 const buscarProp = document.getElementById("buscarProp");
 //array para guardar las claves del localStorage
@@ -71,7 +70,7 @@ addEventListener("DOMContentLoaded", () => {
                         <img src="${tipoProp}" alt="" />
                         <h4>${mostrarProp.nombre}</h4>
                     </div>
-    
+
                     <div class="datosPropiedadDatos">
                         <h6>Direccion: ${mostrarProp.direccion}</h6>
                         <h6>Barrio: ${mostrarProp.barrio}</h6>

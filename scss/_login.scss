@@ -5,4 +5,16 @@
     form {
         margin: 2rem;
     }
+    .userPage {
+        margin: 1rem;
+        .userPagePricipal {
+            display: flex;
+            flex-direction: column;
+        }
+        .userPageLinks {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 1rem;
+        }
+    }
 }

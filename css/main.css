@@ -254,3 +254,24 @@ body::-webkit-scrollbar {
 .mainLogin form {
   margin: 2rem;
 }
+.mainLogin .userPage {
+  margin: 1rem;
+}
+.mainLogin .userPage .userPagePricipal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.mainLogin .userPage .userPageLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 1rem;
+}
