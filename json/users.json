@@ -1,10 +1,14 @@
 {
     "Tomas": {
-        "password": "123"
+        "password": "alvarez"
     },
 
     "Prueba": {
-        "password": "000"
+        "password": "123"
+    },
+
+    "Profesor": {
+        "password": "tutor"
     },
 
     "Coderhouse": {
