@@ -1,7 +1,7 @@
 //verifico que haya un usuario logueado, sino lo redirijo a login
 userId = sessionStorage.getItem("id");
 if (userId === null) {
-    window.location.href = "../pages/login.html";
+    window.location.href = "./pages/login.html";
 }
 const propsView = document.getElementById("propsView");
 const buscarProp = document.getElementById("buscarProp");
